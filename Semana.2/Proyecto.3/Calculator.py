@@ -13,6 +13,14 @@ def subtract_list(*numbers):
         total -= n
     return total
 
+def multiply_list(*numbers):
+    if not numbers:
+        return 0
+    total = numbers[0]
+    for n in numbers[1:]:
+        total *= n
+    return total
+
 def main():
     numbers = []
 
@@ -29,12 +37,15 @@ def main():
 
     print("1. Sumar")
     print("2. Restar")
+    print("3. Multiplicar")
     option = input("Seleccione una operación: ")
 
     if option == "1":
         print(f"Resultado: {sum_list(*numbers)}")
     elif option == "2":
         print(f"Resultado: {subtract_list(*numbers)}")
+    elif option == "3":
+        print(f"Resultado: {multiply_list(*numbers)}")
     else:
         print("Opción no válida.")
 
