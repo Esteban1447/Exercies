@@ -21,6 +21,17 @@ def multiply_list(*numbers):
         total *= n
     return total
 
+def divide_list(*numbers):
+    if not numbers:
+        return 0
+    total = numbers[0]
+    for n in numbers[1:]:
+        if n == 0:
+            print("Error: división por cero.")
+            return None
+        total /= n
+    return total
+
 def main():
     numbers = []
 
@@ -38,6 +49,7 @@ def main():
     print("1. Sumar")
     print("2. Restar")
     print("3. Multiplicar")
+    print("4. Dividir")
     option = input("Seleccione una operación: ")
 
     if option == "1":
@@ -46,6 +58,10 @@ def main():
         print(f"Resultado: {subtract_list(*numbers)}")
     elif option == "3":
         print(f"Resultado: {multiply_list(*numbers)}")
+    elif option == "4":
+        result = divide_list(*numbers)
+        if result is not None:
+            print(f"Resultado: {result}")
     else:
         print("Opción no válida.")
 
